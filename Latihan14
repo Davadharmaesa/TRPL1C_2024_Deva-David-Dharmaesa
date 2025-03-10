@@ -1,0 +1,13 @@
+int squareTail(int n, int acc) {
+  if (n == 0) return acc;
+  return squareTail(n - 1, acc + 2 * n - 1);
+}
+
+int square(int n) {
+  return squareTail(n, 0);
+}
+
+void main() {
+  print(square(5));  
+  print(square(123)); 
+}
