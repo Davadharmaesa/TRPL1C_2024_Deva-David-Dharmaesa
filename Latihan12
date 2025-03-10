@@ -1,0 +1,17 @@
+bool gcdlikeTail(int p, int q, bool result){
+  if(q == 0){
+    return(p == 1)? true : false;
+  }
+  return gcdlikeTail(p, p % q, result);
+}
+
+bool gcdlike(int p, int q){
+  return gcdlikeTail(p, q, false);
+}
+
+void main(){
+  int p = 10;
+  int q = 15;
+  bool hasil = gcdlike(p, q);
+  print("apakah gcd($p, $q) = 1? $hasil");
+}
