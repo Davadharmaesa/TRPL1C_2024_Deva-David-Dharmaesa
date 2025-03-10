@@ -1,0 +1,14 @@
+hanoi(int n, String dari, String ke, String lewat ){
+  if(n == 1 ){
+    print("Pindahkan disk 1 dari $dari ke $ke");
+  }else{
+    hanoi(n - 1 , dari, lewat, ke);
+    print("Pindahkan disk $n dari $dari ke $ke");
+    hanoi(n - 1, lewat, ke, dari);
+  }
+}
+
+void main(){
+  int n = 3;
+  hanoi(n, "A", "C", "B" );
+}
