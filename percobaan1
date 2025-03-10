@@ -1,15 +1,21 @@
 import 'dart:io';
-
-int faktorialrekursif (int x){
-  if (x == 1){
-    return x;
-  }else{
-    return x * faktorialrekursif(x - 1);
+segitigaPascal(int n, int k){
+  if(k == 0 || k == n){
+    return 1;
   }
+  return segitigaPascal(n - 1, k - 1) + segitigaPascal(n - 1, k);
 }
 
 void main(){
-  stdout.write("N = ");
-  int n = int.parse(stdin.readLineSync()!);
-  print("Hasil = ${faktorialrekursif(n)}");
+  int n = 8;
+
+  for (int i = 0; i < n; i++ ){
+    stdout.write("F${i+1} ");
+    String spasidepan = " " * (n - i);
+    stdout.write(spasidepan);
+    for(int j = 0; j <= i; j++){
+      stdout.write("${segitigaPascal(i, j)} "); 
+    }
+    print("");
+  }
 }
