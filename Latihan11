@@ -1,0 +1,13 @@
+import 'dart:io';
+void decTobinTail(int num, String result){
+  if (num == 0){
+    stdout.write(result);
+    return;
+  }
+  decTobinTail(num ~/ 2, result + "${num % 2}");
+}
+
+void main(){
+  decTobinTail(10, "");
+}
+
